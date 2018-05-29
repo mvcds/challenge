@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import MessageInput from './MessageInput'
+
 function Message ({ id, text }) {
   return (
     <div key={id}>
@@ -10,34 +12,9 @@ function Message ({ id, text }) {
   );
 }
 
-function onSend ({ target }) {
-  const { text } = this.refs
-
-  const { messages } = this.state
-
-  const newMessage = {
-    id: new Date(),
-    text: text.value
-  }
-
-  this.setState({ messages: [ ...messages, newMessage ] })
-  text.value = ''
-  text.focus()
-}
-
 class App extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      messages: []
-    }
-
-    this.onSend = onSend.bind(this)
-  }
-
   render() {
-    const { messages } = this.state
+    const { messages, onSend } = this.props
 
     return (
       <React.Fragment>
@@ -46,10 +23,7 @@ class App extends Component {
           <ul class="message-list">
             {messages.map(Message)}
           </ul>
-          <div class="message-input">
-            <input type="text" ref="text" />
-            <button type="button" onClick={this.onSend}>Enviar</button>
-          </div>
+          <MessageInput onSend={onSend} />
         </div>
       </React.Fragment>
     );
