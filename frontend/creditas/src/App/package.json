@@ -1,6 +1,6 @@
 {
   "name": "App",
   "description": "",
-  "main": "./App.state.js",
+  "main": "./App.polling.js",
   "private": true
 }
