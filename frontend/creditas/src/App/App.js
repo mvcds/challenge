@@ -3,14 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import MessageInput from './MessageInput'
-
-function Message ({ id, text }) {
-  return (
-    <div key={id}>
-      {text}
-    </div>
-  );
-}
+import Chat from './Chat'
 
 class App extends Component {
   render() {
@@ -20,9 +13,7 @@ class App extends Component {
       <React.Fragment>
         <h1>Chat</h1>
         <div class="messages">
-          <ul class="message-list">
-            {messages.map(Message)}
-          </ul>
+          <Chat messages={messages} />
           <MessageInput onSend={onSend} />
         </div>
       </React.Fragment>
