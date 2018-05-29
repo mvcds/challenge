@@ -1,0 +1,6 @@
+{
+  "name": "App",
+  "description": "",
+  "main": "./App.state.js",
+  "private": true
+}
