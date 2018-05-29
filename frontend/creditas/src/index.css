@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.messages {
+  width: 20em;
+}
+
+.message-list {
+  min-height: 10em;
+  background-color: #f3f3f3;
+}
